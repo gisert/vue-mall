@@ -30,9 +30,26 @@
        },
        methods: {
            changeTabBarActive(){
-             
+              this.nowPath = this.$route.path 
+              if(this.nowPath === '/Cart'){
+                  this.active = 2
+              }
            },
            changeTabbar(active) {
+               switch(active){
+                   case 0 : 
+                       this.$router.push({name:'ShoppingMall'})
+                       break;
+                   case 1 : 
+                       this.$router.push({name:'CategoryList'})
+                       break;
+                    case 2:
+                        this.$router.push({name:'Cart'})
+                        break;
+                    case 3:
+                        this.$router.push({name:'Member'})
+                        break;
+               }
            }
        },
     }
